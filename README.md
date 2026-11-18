@@ -6,7 +6,7 @@
 
 **给「红果短剧」Android 客户端做的一套二次元皮肤层 —— 只换视觉，不动播放内核。**
 
-![版本](https://img.shields.io/badge/版本-0.12.80-ani7-ff5f92?style=flat-square)
+![版本](https://img.shields.io/badge/version-0.12.80--ani7-ff5f92?style=flat-square)
 ![体积](https://img.shields.io/badge/APK-2.19MB-6ee7f5?style=flat-square)
 ![Android](https://img.shields.io/badge/Android-8.0%2B-3ddc84?style=flat-square&logo=android&logoColor=white)
 ![许可证](https://img.shields.io/badge/license-GPL--3.0-555555?style=flat-square)
