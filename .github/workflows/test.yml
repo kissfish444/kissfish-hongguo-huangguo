@@ -1,8 +1,8 @@
 # 红果短剧 6.0：统一发行前的源码回归检查。
+# 樱夜版：改为手动触发，避免每次 push 都在仓库首页挂红叉。
 name: Test
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:

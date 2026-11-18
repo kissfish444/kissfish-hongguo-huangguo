@@ -1,19 +1,7 @@
 name: Android cast
+# 樱夜版：改为手动触发，避免每次 push 都自动跑一遍 Android 装配检查。
 on:
-  push:
-    paths:
-      - 'android/**'
-      - 'src/android/**'
-      - 'src/native/app-source-registered.js'
-      - 'scripts/check-android-*'
-      - '.github/workflows/android-cast.yml'
-  pull_request:
-    paths:
-      - 'android/**'
-      - 'src/android/**'
-      - 'src/native/app-source-registered.js'
-      - 'scripts/check-android-*'
-      - '.github/workflows/android-cast.yml'
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
