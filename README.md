@@ -41,13 +41,13 @@
 <sub>▲ 上图为按本项目配色与尺寸绘制的界面示意（矢量图，非实机截图）</sub>
 </div>
 
-实机截图请看 [Releases](https://github.com/) 页或 issue 区。想补自己的截图：装好后截三张（首页 / 详情选集 / 播放中），放进 `docs/images/` 并在 README 里替换上面这张。
+实机截图还在补。想补自己的截图：装好后截三张（首页 / 详情选集 / 播放中），放进 `docs/images/` 并在 README 里替换上面这张。
 
 ## 下载与安装
 
 | 项 | 值 |
 |---|---|
-| APK | `Hongguo-0.12.80-ani7-phone-release-compatible.apk`（2.19 MB） |
+| APK | [`release/Hongguo-0.12.80-ani7-phone-release.apk`](release/Hongguo-0.12.80-ani7-phone-release.apk)（2.19 MB，仓库内直链） |
 | 包名 | `io.github.jackotom.hongguo.android` |
 | 版本 | `0.12.80-ani7`（versionCode 103） |
 | 支持 | Android 8.0（API 26）及以上，targetSdk 35 |
