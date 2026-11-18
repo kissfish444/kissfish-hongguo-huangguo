@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content" />
+    <meta name="theme-color" content="#0d0a14" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+    <title>红果短剧</title>
+    <link rel="stylesheet" href="/startup.css" />
+  </head>
+  <body>
+    <div id="root"><main class="startup-panel" role="status">
+      <img class="startup-art" src="./splash.png" alt="" width="480" height="480" />
+      <h1 id="startup-title">红果短剧</h1>
+      <p class="startup-sub">樱夜 · AniSakura</p>
+      <p id="startup-message">正在准备页面，请稍候。</p>
+      <div class="startup-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <button id="startup-retry" type="button" hidden>重新打开</button>
+    </main></div>
+    <script src="/generated/startup-bootstrap.js" data-hongguo-boot defer></script>
+    <script type="module" src="/main.jsx"></script>
+  </body>
+</html>

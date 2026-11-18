@@ -1,0 +1,38 @@
+NOTICE — 樱夜 AniSakura
+======================
+
+本项目是以下开源项目的衍生作品（derivative work），按其 GPL-3.0 许可条款分发。
+
+上游项目（Upstream）
+--------------------
+  名称：红果 Android Cast（Hongguo Android Cast）
+  作者：skydeadpeng
+  地址：https://github.com/skydeadpeng/hongguo-android-cast
+  许可：GNU General Public License v3.0
+
+  更上游（upstream of upstream）
+  名称：红果短剧（hongguo-drama）
+  作者：jackotom
+  地址：https://github.com/jackotom/hongguo-drama
+  许可：GNU General Public License v3.0
+
+本项目的改动范围
+----------------
+  新增：src/android/theme-anime.css        （二次元皮肤层，约 500 行）
+  修改：src/android/main.jsx               （仅新增一行 import）
+  其余源码、资源、逻辑均来自上游，未做修改。
+
+许可
+----
+  本项目以 GNU General Public License v3.0 发布，完整条文见 LICENSE。
+  再分发时必须：
+    1. 保留本 NOTICE 与 LICENSE；
+    2. 保留上游版权声明；
+    3. 以 GPL-3.0 授权衍生作品；
+    4. 若修改源码，需标明修改内容与日期（见 CHANGELOG.md）。
+
+商标与内容
+----------
+  红果短剧、黄果漫剧等名称、商标、影视内容归各自权利人所有。
+  本项目为非官方第三方客户端皮肤，与上述主体无任何关联，未获其授权或认可。
+  本项目不提供、不托管、不分发任何影视内容。

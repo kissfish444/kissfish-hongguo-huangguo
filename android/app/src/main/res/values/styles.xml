@@ -1,0 +1,14 @@
+<resources>
+    <!-- 樱夜 AniSakura：应用固定深色，不跟随系统浅色模式，避免启动瞬间白屏 -->
+    <style name="AppTheme" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#FF5F92</item>
+        <item name="android:isLightTheme">false</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">#0D0A14</item>
+        <item name="android:navigationBarColor">#0D0A14</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">#0D0A14</item>
+    </style>
+</resources>

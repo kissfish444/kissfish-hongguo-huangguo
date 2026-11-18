@@ -1,0 +1,84 @@
+name: Build APK
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-phone-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 安装 JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: 安装 Android SDK 35
+        uses: android-actions/setup-android@v3
+        with:
+          packages: 'platforms;android-35 build-tools;35.0.0 platform-tools'
+
+      - name: 安装 Gradle 8.13
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.13'
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 构建 WebView 界面
+        run: npm run build:android:ui
+
+      # CI 里没有本机调试证书，现场生成一把，仅用于测试分发
+      - name: 生成签名用调试证书
+        run: |
+          mkdir -p "$HOME/.android"
+          keytool -genkeypair -v \
+            -keystore "$HOME/.android/debug.keystore" \
+            -storepass android -keypass android -alias androiddebugkey \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=Android Debug,O=Android,C=US"
+
+      - name: 打包 Release APK
+        run: gradle -p android assemblePhoneRelease -PhongguoReleaseSigning=compatible
+
+      - name: 重命名产物
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          [ -z "$VERSION" ] && VERSION="dev"
+          SRC="android/app/build/outputs/apk/phone/release/app-phone-universal-release.apk"
+          DEST="Hongguo-${VERSION}-phone-release-compatible.apk"
+          cp "$SRC" "$DEST"
+          echo "APK_NAME=$DEST" >> "$GITHUB_ENV"
+
+      - name: 上传构建产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: hongguo-anisakura-apk
+          path: ${{ env.APK_NAME }}
+          if-no-files-found: error
+
+      - name: 附加到 Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.APK_NAME }}
+          generate_release_notes: true
+          body: |
+            > 调试证书签名。安装前请先卸载旧的 `io.github.jackotom.hongguo.android`，否则会报签名冲突。
+
+            本版为 **樱夜 AniSakura** 二次元皮肤版，仅改动视觉层，播放/投屏/鉴权与上游 `0.12.80` 一致。

@@ -1,0 +1,63 @@
+name: 🐞 报告问题
+description: 界面样式错乱、构建失败、安装不了
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请尽量填全，尤其是机型和系统深浅色模式——很多「白底 / 看不清」问题都出在这。
+  - type: input
+    id: device
+    attributes:
+      label: 手机型号与系统版本
+      placeholder: 例如 小米 14 / HyperOS 2.0 / Android 15
+    validations:
+      required: true
+  - type: dropdown
+    id: theme_mode
+    attributes:
+      label: 系统是深色还是浅色模式
+      options:
+        - 深色模式
+        - 浅色模式
+        - 跟随时间自动切换
+    validations:
+      required: true
+  - type: dropdown
+    id: scene
+    attributes:
+      label: 出问题的位置
+      multiple: true
+      options:
+        - 首页列表 / 海报卡片
+        - 分类 Tab
+        - 搜索页
+        - 详情页 / 选集
+        - 播放中
+        - 我的 / 设置 / 下载
+        - 启动即崩溃或白屏
+        - 构建 / 打包（开发问题）
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 具体现象
+      placeholder: 哪个元素、什么颜色、间距哪里不对；能不能稳定复现
+    validations:
+      required: true
+  - type: textarea
+    id: shot
+    attributes:
+      label: 截图 / 录屏
+      description: 直接拖进来即可
+    validations:
+      required: false
+  - type: input
+    id: apk
+    attributes:
+      label: 用的哪个 APK
+      placeholder: 例如 Hongguo-0.12.80-ani2-phone-release-compatible.apk
+    validations:
+      required: false

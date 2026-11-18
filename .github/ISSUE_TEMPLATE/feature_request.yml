@@ -1,0 +1,36 @@
+name: 💡 功能 / 皮肤建议
+description: 想要的新皮肤效果，或想加的功能
+title: "[建议] "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 属于哪类
+      options:
+        - 皮肤调整（配色、圆角、间距、动效）
+        - 新增功能（需要改 App.jsx）
+        - 文档 / 构建体验
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: 你想要的效果
+      placeholder: 描述一下「现在是什么样 → 希望变成什么样」
+    validations:
+      required: true
+  - type: textarea
+    id: ref
+    attributes:
+      label: 参考图 / 别的 App 的做法
+      description: 有参考最好，直接贴图或链接
+    validations:
+      required: false
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: 影响范围
+      options:
+        - label: 我理解皮肤类改动只应动 theme-anime.css，功能类改动会动 App.jsx
+          required: true
